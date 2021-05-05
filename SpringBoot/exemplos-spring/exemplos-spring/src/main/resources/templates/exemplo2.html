@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2</title>
+</head>
+<body>
+    <div>
+        <h1> Spring MVC - Exemplo 2 </h1>
+        <p> Iserindo os atributos que foram adicionados na DAO </p>
+        
+        <br>
+        <p>Acontece que:  ModelosDaController --> Thymeleaf <-- template  == HTML DE RESPOSTA</p>
+        <br>
+
+        <p>Nome:            <span th:text="${nome}"> xxxxx </span></p>
+        <p>Data Nascimento: <span th:text="${dataNascimento}"> yyyy-mm-dd </span></p>
+        <p>Núnero:          <span th:text="${numero}"> 00 </span></p>
+        <p>Data/Hora:       <span th:text="${dataHoraAtual}">  </span></p>
+    </div>
+</body>
+</html>
