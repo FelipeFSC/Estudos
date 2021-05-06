@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div>
+        <h1> Spring MVC - Exemplo 4 </h1>
+
+        <ul>    <!--
+                    Aqui estou criando um classico For Each
+                    
+                    ( th:each )
+
+                    
+                    antes dos dois pontos temos o nome que usaremos
+                    e depois a lista que sera percorrida
+
+                    nome_de_uso : ${ minhaLista }
+                -->
+            <li th:each="p : ${lista}">
+                <h3>Nome: <span th:text="${p.nome}">xxxxxx</span> </h3>
+                <p>Data de nascimento: <span th:text="${p.dataNascimento}">yyyy-mm-dd </span> <span class="avisoMenorIdade" th:if="${p.isMenorIdade}"> Menor 18</span> </p>
+                <p>Número: <span th:text="${p.numero}">00</span> </p>
+            
+                <ul>    <!--
+                        Na linha abaixo estou basicamente estou percorrendo uma
+                        lista interna da lista Exemplo(lista externa).
+
+                        como os dois cadastros acima não tem uma lista
+                        para não dar erro nesta nossa busca colocamos um if
+                        onde ele só faz o for each se a lista de telefones forem
+                        diferentes de null
+                        -->
+                    <li th:each="t : ${p.telefone}" th:if="${p.telefone != null}">
+                        <span th:text="${t}"> xxxxxx </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

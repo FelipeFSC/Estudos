@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 6</title>
+</head>
+<body>
+    <div>
+        <h1> Spring MVC - Exemplo 6 </h1>
+
+        <div th:if="${dados != null}">
+            <p>Nome:            <span th:text="${dados.nome}"> xxxxx </span></p>
+            <p>Data Nascimento: <span th:text="${dados.dataNascimento}"> yyyy-mm-dd </span></p>
+            <p>Núnero:          <span th:text="${dados.numero}"> 00 </span></p>
+        </div>
+        <div th:unless="${dados != null}">
+            <p> Apelido não existe </p>
+        </div>
+    </div>
+</body>
+</html>

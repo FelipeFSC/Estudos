@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 3</title>
+    <title>Exemplo 5</title>
 </head>
 <body>
     <div>
@@ -16,9 +16,12 @@
         <br>
 
         <p>Nome:            <span th:text="${dados.nome}"> xxxxx </span></p>
-        <p>Data Nascimento: <span th:text="${dados.dataNascimento}"> yyyy-mm-dd </span></p>
+        <p>Data Nascimento: 
+        <span th:text="${dados.dataNascimento}" th:if="${dados.dataNascimento != null}"> yyyy-mm-dd </span>
+        <!-- unless faz o contrario do IF, enquanto o if verifica se é TRUE o unless verifica se é FALSE -->
+        <span th:unless="${dados.dataNascimento != null}">Não Informado</span></p>
+        
         <p>Núnero:          <span th:text="${dados.numero}"> 00 </span></p>
-        <p>Data/Hora:       <span th:text="${dataHoraAtual}">  </span></p>
     </div>
 </body>
 </html>
