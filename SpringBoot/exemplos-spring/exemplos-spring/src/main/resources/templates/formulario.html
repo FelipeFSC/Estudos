@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Spring MVC</title>
+</head>
+<body>
+    <div>
+        <h1>Exemplo Formulário</h1>
+
+        <!-- O @ indica o caminho raiz -->
+        <form th:action="@{/formulario/salvar}" method="POST">
+            <div>
+                <label>Nome</label>
+                <input type="text" name="nome"/>
+            </div>
+            <div>
+                <label>E-mail</label>
+                <input type="email" name="email"/>
+            </div>
+            <div>
+                <label>Telefone</label>
+                <input type="text" name="telefone"/>
+            </div>
+            <div>
+                <label>Senha</label>
+                <input type="password" name="senha"/>
+            </div>
+            <div>
+                <label>Repetir senha</label>
+                <input type="password" name="repetirSenha"/>
+            </div>
+
+            <div>
+                <label>Descrição</label>
+                <textarea name="descricao"></textarea>
+            </div>
+            <div>
+                <label>Número de 1 a 88</label>
+                <input type="number" name="numero"/>
+            </div>
+            <div>
+                <label>Peso</label>
+                <input type="number" name="peso"  step="0.1" />
+            </div>
+            <div>
+                <label>Altura</label>
+                <input type="number" name="altura"   step="0.01"/>
+            </div>
+            <div>
+                <label>Data nascimento</label>
+                <input type="date" name="dataNascimento"/>
+            </div>
+
+            <fieldset>
+                <legend>Gênero</legend>
+                <div>
+                    <input type="radio" name="genero" value="0" id="radGeneroF"/>
+                    <label for="radGeneroF">Feminino</label>
+                </div>
+                <div>
+                    <input type="radio" name="genero" value="1" id="radGeneroM"/>
+                    <label for="radGeneroM">Masculino</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Interesses</legend>
+                <div>
+                    <input type="checkbox" name="interesses" value="Tecnologia" id="chkInteresse1"/>
+                    <label for="chkInteresse1">Tecnologia</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interesses" value="Esportes" id="chkInteresse2"/>
+                    <label for="chkInteresse2">Esportes</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interesses" value="Gastronomia" id="chkInteresse3"/>
+                    <label for="chkInteresse3">Gastronomia</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interesses" value="Viagens" id="chkInteresse4"/>
+                    <label for="chkInteresse4">Viagens</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interesses" value="Investimentos" id="chkInteresse5"/>
+                    <label for="chkInteresse5">Investimentos</label>
+                </div>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Spring MVC</title>
+</head>
+<body>
+    <div>
+        <h1>Dados Salvos com sucesso</h1>
+
+        <p>Nome:                 <span th:text="${dados.nome}"></span> </p>
+        <p>Email:                <span th:text="${dados.email}"></span> </p>
+        <p>Telefone:             <span th:text="${dados.telefone}"></span> </p>
+        <p>Senha:                <span th:text="${dados.senha}"></span> </p>
+        <p>Confirmação da Senha: <span th:text="${dados.repetirSenha}"></span> </p>
+        <p>Descrição:            <span th:text="${dados.descricao}"></span> </p>
+        <p>Número:               <span th:text="${dados.numero}"></span> </p>
+        <p>Peso:                 <span th:text="${dados.peso}"></span> </p>
+        <p>Altura:               <span th:text="${dados.altura}"></span> </p>
+        <p>Data de nascimento:   <span th:text="${dados.dataNascimento}"></span> </p>
+
+        <p>Genero:               <span th:if="${dados.genero == 0}"> Feminino </span>
+                                 <span th:if="${dados.genero == 1}"> Masculino </span>
+        </p>
+
+        <p>Interesses:
+            <ul th:if="${dados.interesses != null && !dados.interesses.isEmpty()}">
+                <li th:each="interesses : ${dados.interesses}" th:text="${interesses}"></li>
+            </ul>
+            <p th:unless="${dados.interesses != null && !dados.interesses.isEmpty()}">
+                Nenhum selecionado
+            </p>
+        </p>
+
+        <a th:href="@{/formulario}">Voltar</a>
+    </div>
+</body>
+</html>
